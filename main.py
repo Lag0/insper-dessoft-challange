@@ -1,6 +1,7 @@
 # Importações Necessárias
 import random
 import pprint
+from yachalk import chalk
 
 # Criando as peças do jogo
 def cria_pecas():
@@ -82,11 +83,11 @@ def adiciona_na_mesa(peca, mesa):
 
 # Formatando INICIA_JOGO
 def formatado_inicia_jogo(dicionario):
-    print("Peças dos Jogadores:")
+    print(chalk.red.italic("Peças dos Jogadores:"))
     pprint.pprint(dicionario['jogadores'])
-    print("Monte Atual:")
+    print(chalk.red.italic("Monte Atual:"))
     pprint.pprint(dicionario['monte'])
-    print("Mesa Atual:")
+    print(chalk.red.italic("Mesa Atual:"))
     pprint.pprint(dicionario['mesa'])
 
 #---------------------------------------------------------------#
