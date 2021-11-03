@@ -1,5 +1,6 @@
 # Importações Necessárias
 import random
+import pprint
 
 # Criando as peças do jogo
 def cria_pecas():
@@ -79,13 +80,23 @@ def adiciona_na_mesa(peca, mesa):
         
     return mesa
 
+# Formatando INICIA_JOGO
+def formatado_inicia_jogo(dicionario):
+    print("Peças dos Jogadores:")
+    pprint.pprint(dicionario['jogadores'])
+    print("Monte Atual:")
+    pprint.pprint(dicionario['monte'])
+    print("Mesa Atual:")
+    pprint.pprint(dicionario['mesa'])
+
 #---------------------------------------------------------------#
 #                       IGNORE - TEST ONLY                      #
-jogadores = 4
+jogadores = 3
 peças = cria_pecas()
 dicionario = (inicia_jogo(jogadores, peças))
 pecas_testes = dicionario['jogadores'][0]
 pecas_testes2 = dicionario['jogadores'][0][1]
+formatado_inicia_jogo(dicionario)
 #                       SOMENTE PARA TESTE                      #
 #---------------------------------------------------------------#
 
