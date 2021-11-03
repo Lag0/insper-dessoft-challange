@@ -36,6 +36,22 @@ def soma_pecas(pecas_jogador):
     
     return soma
 
+# Possíveis posições na mesa
+def posicoes_possiveis(mesa, pecas):
+    posicoes = []
+    if len(mesa) == 0: # mesa vazia
+        for i in range(len(pecas)):
+            posicoes.append(i)
+        return posicoes
+
+    p1 = mesa[0][0]  # Uma das pontas da mesa
+    p2 = mesa[-1][1] # A outra ponta da mesa
+
+    for c in range(len(pecas)):
+        if pecas[c][0] == p1 or pecas[c][0] == p2 or pecas[c][1] == p1 or pecas[c][1] == p2:
+            posicoes.append(c)
+    return posicoes
+
 
 #---------------------------------------------------------------#
 
