@@ -86,7 +86,6 @@ peças = cria_pecas()
 dicionario = (inicia_jogo(jogadores, peças))
 pecas_testes = dicionario['jogadores'][0]
 pecas_testes2 = dicionario['jogadores'][0][1]
-print(adiciona_na_mesa(pecas_testes2, mesa))
 #                       SOMENTE PARA TESTE                      #
 #---------------------------------------------------------------#
 
