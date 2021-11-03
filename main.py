@@ -27,6 +27,18 @@ def verifica_ganhador(dicionario):
             return k
     else: return -1
 
+# Soma das peças dos jogadores
+def soma_pecas(pecas_jogador):
+    soma = 0
+    for p in pecas_jogador:
+        soma += p[0]
+        soma += p[1]
+    
+    return soma
+
+
+#---------------------------------------------------------------#
+
 # IGNORE - TEST ONLY
 jogadores = 4
 peças = cria_pecas()
@@ -39,13 +51,8 @@ print(verifica_ganhador(
                         3: [[3, 5], [4, 4], [4, 5], [0, 2], [5, 5], [5, 6], [0, 5]]
                         }))
 
-# Soma das peças dos jogadores
-def soma_pecas(pecas_jogador):
-    soma = 0
-    for p in pecas_jogador:
-        soma += p[0]
-        soma += p[1]
-    
-    return soma
+
+#----------------------------------------------------------------#
+
 
 
