@@ -81,7 +81,7 @@ def adiciona_na_mesa(peca, mesa):
 
 #---------------------------------------------------------------#
 #                       IGNORE - TEST ONLY                      #
-jogadores = 3
+jogadores = 2
 peças = cria_pecas()
 dicionario = (inicia_jogo(jogadores, peças))
 pecas_testes = dicionario['jogadores'][0]
