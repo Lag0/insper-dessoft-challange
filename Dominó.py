@@ -25,5 +25,5 @@ print(f'No jogo temos: \n{n_jogadores} jogadores com 7 peças cada!\n')
 print(f'Tamanho do monte: {len(monte)} peças')
 print(f"Mesa Atual: {mesa}")
 
-
+print(f'Jogador {n_jogadores}:')
 
