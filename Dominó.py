@@ -28,4 +28,3 @@ print(f"Mesa Atual: {mesa}")
 
 #print(f"Jogador {}")
 #print(f"Colocou {}")
-

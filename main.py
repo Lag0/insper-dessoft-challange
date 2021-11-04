@@ -88,3 +88,6 @@ pecas_testes = dicionario['jogadores'][0]
 pecas_testes2 = dicionario['jogadores'][0][1]
 #                       SOMENTE PARA TESTE                      #
 #---------------------------------------------------------------#
+
+
+
