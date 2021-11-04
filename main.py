@@ -1,7 +1,5 @@
 # Importações Necessárias
 import random
-import pprint
-
 
 # Criando as peças do jogo
 def cria_pecas():
@@ -21,21 +19,6 @@ def inicia_jogo(jogadores, peças):
         del peças[0:7]
     dicionario['monte'] = peças
     return dicionario
-
-
-def formata_dicionario(dic):
-    for k, v in dic.items():
-        print('{}:{}'.format(k, v))
-
-    print('')
-    print('Jogadores: ')
-    formata_dicionario(dic['jogadores'])
-    print('')
-    print('{} : {}'.format('Mesa', dic['mesa']))
-    print('')
-    print('{} : {}'.format('Monte', dic['monte']))
-    print('')
-
 
 # Verificando Ganhador
 def verifica_ganhador(dicionario):
@@ -96,19 +79,12 @@ def adiciona_na_mesa(peca, mesa):
         
     return mesa
 
-# Formatando INICIA_JOGO
-
-
 #---------------------------------------------------------------#
 #                       IGNORE - TEST ONLY                      #
-jogadores = 3
+jogadores = 2
 peças = cria_pecas()
 dicionario = (inicia_jogo(jogadores, peças))
 pecas_testes = dicionario['jogadores'][0]
 pecas_testes2 = dicionario['jogadores'][0][1]
-
 #                       SOMENTE PARA TESTE                      #
 #---------------------------------------------------------------#
-
-
-
