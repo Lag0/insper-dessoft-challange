@@ -22,6 +22,21 @@ def inicia_jogo(jogadores, peças):
     dicionario['monte'] = peças
     return dicionario
 
+
+def formata_dicionario(dic):
+    for k, v in dic.items():
+        print('{}:{}'.format(k, v))
+
+    print('')
+    print('Jogadores: ')
+    formata_dicionario(dic['jogadores'])
+    print('')
+    print('{} : {}'.format('Mesa', dic['mesa']))
+    print('')
+    print('{} : {}'.format('Monte', dic['monte']))
+    print('')
+
+
 # Verificando Ganhador
 def verifica_ganhador(dicionario):
     for k in dicionario.keys():
