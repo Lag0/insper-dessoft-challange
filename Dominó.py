@@ -33,8 +33,6 @@ while game_on:
     for i in ordem:
         def formata():
             
-            print(soma_pecas(jogadores_pecas[i]))
-            
             print(chalk.blue(f'Tamanho do monte: {len(monte)} peças'))
             print(chalk.yellow(f"Mesa Atual: {mesa}\n"))
 
