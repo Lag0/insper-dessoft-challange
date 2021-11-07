@@ -43,9 +43,6 @@ while game_on:
 
             print(chalk.red(f"Não tem peças possíveis, comprando do monte"))
             print(f'{jogadores_pecas[i]}\n') # Tirar esse print quando o código estiver pronto
-        
-
- 
 
         def formata():
             
@@ -60,14 +57,35 @@ while game_on:
 
             print("-"*30)
             
-            if len(posicoes_possiveis(mesa, jogadores_pecas[i])) >= 1  and i == 0 :
-                print("\nPosições das peças possíveis: ")
-                print(posicoes_possiveis(mesa, jogadores_pecas[i])) 
-                jogar = int(input('Qual peça você quer jogar: '))
-                adiciona_na_mesa(jogadores_pecas[i][jogar], mesa)
-                jogadores_pecas[i].pop(jogar)
-                chama_mesa()
-            
+            #Jogador Manual
+            if i == 0:
+                if len(posicoes_possiveis(mesa, jogadores_pecas[i])) >= 1 :
+                    print("\nPosições das peças possíveis: ")
+                    print(posicoes_possiveis(mesa, jogadores_pecas[i])) 
+                    jogar = int(input('Qual peça você quer jogar: '))
+                    adiciona_na_mesa(jogadores_pecas[i][jogar], mesa)
+                    jogadores_pecas[i].pop(jogar)
+                    chama_mesa()
+
+                else:
+                    while len(posicoes_possiveis(mesa, jogadores_pecas[i])) == 0 and len(jogadores_pecas[i]) > 0 and len(monte) > 0:
+                        user_input = input(chalk.red.bold( '\nVocê não tem peças possiveis! Aperte [ENTER] para comprar do monte!\n'))
+                        
+
+                        if user_input == '':
+                            comprando_monte()
+                        else:
+                            print(chalk.red.bold("Opção Invalida! Precisione a tecla [ENTER]\n"))
+                    
+                    chama_mesa()
+                    print('Agora você tem peças possíveis\n')
+                    print(chalk.magenta(jogadores_pecas[0]))
+                    print("Posições das peças possíveis: ")
+                    print(posicoes_possiveis(mesa, jogadores_pecas[i])) 
+                    jogar = int(input('Qual peça você quer jogar: \n'))
+                    adiciona_na_mesa(jogadores_pecas[i][jogar], mesa)
+                    jogadores_pecas[i].pop(jogar)
+                  
             # Jogador Automático
             if i > 0:
                 a = posicoes_possiveis(mesa,jogadores_pecas[i])
@@ -77,26 +95,10 @@ while game_on:
 
                 a = posicoes_possiveis(mesa,jogadores_pecas[i])
                 print(jogadores_pecas[i])
-                print(f'Posições possíveis{a}')
+                print(f'Posições possíveis{a}\n ')
                 # print(f'{jogadores_pecas[i][a[0]]}\n') 
                 adiciona_na_mesa(jogadores_pecas[i][a[0]], mesa) # Por causa do else esse a só pode ser igual a 0 - PROBLEMA
                 jogadores_pecas[i].pop(a[0])
-            
-            # COMPRA DO MONTE!(Manual)
-            if i == 0 :
-                while len(posicoes_possiveis(mesa, jogadores_pecas[i])) == 0 and len(jogadores_pecas[i]) > 0 and len(monte) > 0: # Apenas o jogador manual deve apertar ENTER para comprar peças
-                    user_input = input(
-                        chalk.red.bold(
-                            '\nVocê não tem peças possiveis! Aperte [ENTER] para comprar do monte!\n'
-                        )
-                    )
-                    
-
-                    if user_input == '':
-                        comprando_monte()
-                    else:
-                        print(chalk.red.bold("Opção Invalida! Precisione a tecla [ENTER]\n"))
-                    print(chalk.red(f"Você não tem peças, comprando do monte\n"))
                     
                 
             if len(monte) == 0 and len(posicoes_possiveis(mesa, jogadores_pecas[i])) == 0:
